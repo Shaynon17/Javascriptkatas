@@ -4,7 +4,7 @@ function add(x, y) {
 
 
 test('add will sum together two numbers', function (assert) {
-    let result = add(1, 2)
+    let result = add(1, 2);
     assert.equal(result, 3);
 });
 
@@ -13,12 +13,12 @@ function sub(x, y) {
 }
 
 test('sub will subtract a from b', function (assert) {
-    let result = sub(4, 2)
+    let result = sub(4, 2);
     assert.equal(result, 2);
 });
 
 test('sub will subtract a from b with different numbers', function (assert) {
-    let result = sub(15, 2)
+    let result = sub(15, 2);
     assert.equal(result, 13);
 });
 
@@ -27,7 +27,7 @@ function helloThere(name) {
 }
 
 test('helloThere will prepend hello to the name', function (assert) {
-    let result = helloThere("steve")
+    let result = helloThere("steve");
     assert.equal(result, "hello steve");
 });
 
@@ -46,11 +46,46 @@ test('helloThere will prepend hello to any name', function (assert) {
 
 // kata practice
 
+// fizzbuzz kata -> 
+// replace numbers divisible by 3 with fizz
+// replace numbers divisible by 5 with buzz
+// replace numbers divisible by both 3 and 5 with fizzbuzz
+function fizzBuzzConvert(number) {
+    if (isDivisibleBy(number, 3)) {
+        return "fizz";
+    } else if (number === 5) {
+        return "buzz";
+    } else {
+        return number;
+    }
+}
 
-//test('fizzbuzz(1) will return 1', function (assert) {
-//let result = fizzbuzz(1)
-//assert.equal(result, 1);
-//});
+function isDivisibleBy(larger, smaller) {
+    return (larger % smaller === 0)
+}
 
-let f = 2
-console.log(f)
+test('isDivisbleBy(8, 3) will return false', function (assert) {
+    let result = isDivisibleBy(8, 3);
+    assert.equal(result, false);
+});
+
+test('fizzbuzz(1) will return 1', function (assert) {
+    let result = fizzBuzzConvert(1);
+    assert.equal(result, 1);
+});
+
+test('fizzbuzz(3) will return "fizz"', function (assert) {
+    let result = fizzBuzzConvert(3);
+    assert.equal(result, "fizz");
+});
+
+test('fizzbuzz(5) will return "buzz', function (assert) {
+    let result = fizzBuzzConvert(5);
+    assert.equal(result, "buzz");
+})
+
+test('fizzbuzz(6,9,12) will return "fizz"', function (assert) {
+    assert.equal(fizzBuzzConvert(6), "fizz");
+    assert.equal(fizzBuzzConvert(9), "fizz");
+    assert.equal(fizzBuzzConvert(12), "fizz");
+})
