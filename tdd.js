@@ -41,13 +41,16 @@ test('helloThere will prepend hello to any name', function (assert) {
 // GREEN -> you make test pass by fixing the code
 // REFACTOR -> clean up the code
 
-// cd  -> change directory 
+// cd  -> change directory
 // cd Coding\Javascript
 
 // kata practice
 
 
-test('fizzbuzz(1) will return 1', function (assert) {
-    let result = fizzbuzz(1)
-    assert.equal(result, 1);
-});
+//test('fizzbuzz(1) will return 1', function (assert) {
+//let result = fizzbuzz(1)
+//assert.equal(result, 1);
+//});
+
+let f = 2
+console.log(f)
