@@ -50,20 +50,23 @@ test('helloThere will prepend hello to any name', function (assert) {
 // replace numbers divisible by 3 with fizz
 // replace numbers divisible by 5 with buzz
 // replace numbers divisible by both 3 and 5 with fizzbuzz
-function fizzBuzzConvert(number) {
-    if (isDivisibleBy(number, 3)) {
-        return "fizz";
-    } else if (number === 5) {
-        return "buzz";
-    } else {
-        return number;
-    }
-}
 
-function isDivisibleBy(larger, smaller) {
-    return (larger % smaller === 0)
-}
 
+// above here is correct
+
+// need it divisble by 15. look at line 63 and 64. can i code 
+//it to where the number can be divisble by 5 and 3 using 
+// 2 statements and they both have to be true to execute?
+
+
+
+/*test('fizzbuzz(15) will return "fizzbuzz"', function (assert) {
+    let result =
+        assert.equal(result, true)
+})
+*/
+
+// below here is correct
 test('isDivisbleBy(8, 3) will return false', function (assert) {
     let result = isDivisibleBy(8, 3);
     assert.equal(result, false);
@@ -88,4 +91,29 @@ test('fizzbuzz(6,9,12) will return "fizz"', function (assert) {
     assert.equal(fizzBuzzConvert(6), "fizz");
     assert.equal(fizzBuzzConvert(9), "fizz");
     assert.equal(fizzBuzzConvert(12), "fizz");
+})
+
+
+function isDivisibleBy(larger, smaller) {
+    return (larger % smaller === 0)
+}
+
+
+function fizzBuzzConvert(number) {
+    if (isDivisibleBy(number, 3) && isDivisibleBy(number, 5)) {
+        return "fizzbuzz";
+    } else if (isDivisibleBy(number, 3)) {
+        return "fizz"
+    } else if (isDivisibleBy(number, 5)) {
+        return "buzz";
+    } else {
+        return number;
+    }
+}
+
+test('fizzbuzz(15) will return "fizzbuzz"', function (assert) {
+    assert.equal(fizzBuzzConvert(15), "fizzbuzz");
+})
+test('fizzbuzz(10) will return "buzz"', function (assert) {
+    assert.equal(fizzBuzzConvert(10), "buzz");
 })
