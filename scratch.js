@@ -18,6 +18,6 @@ function isDivisibleBy(larger, small) {
     return (larger % small === 0)
 }
 
-console.log(fizzBuzzConverter(9))
+console.log(fizzBuzzConverter(6))
 console.log(fizzBuzzConverter(10))
 console.log(fizzBuzzConverter(45))

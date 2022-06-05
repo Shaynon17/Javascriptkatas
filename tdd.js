@@ -117,3 +117,5 @@ test('fizzbuzz(15) will return "fizzbuzz"', function (assert) {
 test('fizzbuzz(10) will return "buzz"', function (assert) {
     assert.equal(fizzBuzzConvert(10), "buzz");
 })
+
+//delete all but one test and redo the fizzbuzz kata
