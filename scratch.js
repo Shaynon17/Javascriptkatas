@@ -1,23 +1,28 @@
-//if 3 then fizz
-//if 5 then buzz
-// if 15 then fizzbuzz
+//make a budget 
+//categories: misc, ambers fun money, my fun money, groceries, eating out, 
 
-function fizzBuzzConverter(number) {
-    if (isDivisibleBy(number, 5) && isDivisibleBy(number, 3)) {
-        return "fizzbuzz"
-    } else if (isDivisibleBy(number, 3)) {
-        return "fizz"
-    } else if (isDivisibleBy(number, 5)) {
-        return "buzz"
-    } else {
-        return number
-    }
+//? how can i plug in my category numbers and get the remainder of all of the variables?
+/* JavaScript doesn't support functions that return multiple values. 
+However, you can wrap multiple values into an array 
+or an object and return the array or the object.
+Use destructuring assignment syntax to unpack values from the array,
+ or properties from objects. */
+
+let netWorth = 1000
+let misc = 80
+let ambersFunMoney = 25
+let myFunMoney = 25
+let groceries = 100
+
+
+
+function bankBalance(netWorth) {
+    return (netWorth - misc - ambersFunMoney - myFunMoney - groceries)
 }
 
-function isDivisibleBy(larger, small) {
-    return (larger % small === 0)
-}
+/* function myFunMoneyBalance(myFunMoney) {
 
-console.log(fizzBuzzConverter(6))
-console.log(fizzBuzzConverter(10))
-console.log(fizzBuzzConverter(45))
+}
+*/
+
+console.log(bankBalance(1000))
